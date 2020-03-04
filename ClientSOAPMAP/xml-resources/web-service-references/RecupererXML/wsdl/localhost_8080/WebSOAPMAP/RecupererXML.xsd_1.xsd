@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://ServiceXML/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ServiceXML/">
+
+<xs:element name="JAXBException" type="tns:JAXBException"/>
+
+<xs:element name="METAR">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="raw_text" type="xs:string" minOccurs="0"/>
+<xs:element name="station_id" type="xs:string" minOccurs="0"/>
+<xs:element name="observation_time" type="xs:string" minOccurs="0"/>
+<xs:element name="latitude" type="xs:float" minOccurs="0"/>
+<xs:element name="longitude" type="xs:float" minOccurs="0"/>
+<xs:element name="temp_c" type="xs:float" minOccurs="0"/>
+<xs:element name="dewpoint_c" type="xs:float" minOccurs="0"/>
+<xs:element name="wind_dir_degrees" type="xs:int" minOccurs="0"/>
+<xs:element name="wind_speed_kt" type="xs:int" minOccurs="0"/>
+<xs:element name="wind_gust_kt" type="xs:int" minOccurs="0"/>
+<xs:element name="visibility_statute_mi" type="xs:float" minOccurs="0"/>
+<xs:element name="altim_in_hg" type="xs:float" minOccurs="0"/>
+<xs:element name="sea_level_pressure_mb" type="xs:float" minOccurs="0"/>
+<xs:element name="quality_control_flags" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="corrected" type="xs:string" minOccurs="0"/>
+<xs:element name="auto" type="xs:string" minOccurs="0"/>
+<xs:element name="auto_station" type="xs:string" minOccurs="0"/>
+<xs:element name="maintenance_indicator_on" type="xs:string" minOccurs="0"/>
+<xs:element name="no_signal" type="xs:string" minOccurs="0"/>
+<xs:element name="lightning_sensor_off" type="xs:string" minOccurs="0"/>
+<xs:element name="freezing_rain_sensor_off" type="xs:string" minOccurs="0"/>
+<xs:element name="present_weather_sensor_off" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="wx_string" type="xs:string" minOccurs="0"/>
+<xs:element name="sky_condition" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence/>
+<xs:attribute name="sky_cover" type="xs:string"/>
+<xs:attribute name="cloud_base_ft_agl" type="xs:int"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="flight_category" type="xs:string" minOccurs="0"/>
+<xs:element name="three_hr_pressure_tendency_mb" type="xs:float" minOccurs="0"/>
+<xs:element name="maxT_c" type="xs:float" minOccurs="0"/>
+<xs:element name="minT_c" type="xs:float" minOccurs="0"/>
+<xs:element name="maxT24hr_c" type="xs:float" minOccurs="0"/>
+<xs:element name="minT24hr_c" type="xs:float" minOccurs="0"/>
+<xs:element name="precip_in" type="xs:float" minOccurs="0"/>
+<xs:element name="pcp3hr_in" type="xs:float" minOccurs="0"/>
+<xs:element name="pcp6hr_in" type="xs:float" minOccurs="0"/>
+<xs:element name="pcp24hr_in" type="xs:float" minOccurs="0"/>
+<xs:element name="snow_in" type="xs:float" minOccurs="0"/>
+<xs:element name="vert_vis_ft" type="xs:int" minOccurs="0"/>
+<xs:element name="metar_type" type="xs:string" minOccurs="0"/>
+<xs:element name="elevation_m" type="xs:float" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="MalformedURLException" type="tns:MalformedURLException"/>
+
+<xs:element name="getIdMetar" type="tns:getIdMetar"/>
+
+<xs:element name="getIdMetarResponse" type="tns:getIdMetarResponse"/>
+
+<xs:element name="listMetar" type="tns:listMetar"/>
+
+<xs:element name="listMetarResponse" type="tns:listMetarResponse"/>
+
+<xs:element name="quality_control_flags"/>
+
+<xs:element name="sky_condition"/>
+
+<xs:element name="test" type="tns:test"/>
+
+<xs:element name="testResponse" type="tns:testResponse"/>
+
+<xs:complexType name="test">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="testResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="JAXBException">
+<xs:sequence>
+<xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+<xs:element name="linkedException" type="tns:throwable" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="throwable">
+<xs:sequence>
+<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stackTraceElement" final="extension restriction">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="MalformedURLException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getIdMetar">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getIdMetarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listMetar">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listMetarResponse">
+<xs:sequence>
+<xs:element name="return" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
